@@ -5,6 +5,7 @@ import Header from "./partials/Header";
 import axios from "../utils/axios";
 import HorizontalCards from "./partials/HorizontalCards";
 import Dropdown from "./partials/Dropdown";
+import Loading from "./Loading";
 
 const Home = () => {
   document.title = "Movie App | Homepage";
@@ -56,7 +57,7 @@ const Home = () => {
       </div>
     </>
   ) : (
-    <h1>Loading</h1>
+    <Loading />
   );
 };
 
