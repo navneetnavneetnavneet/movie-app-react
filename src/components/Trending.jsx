@@ -51,7 +51,7 @@ const Trending = () => {
   return trending.length > 0 ? (
     <div className="w-full h-screen">
       <div className="w-full h-[10vh] px-10 flex items-center justify-between">
-        <h1 className="w-[25%] text-2xl font-semibold text-zinc-400">
+        <h1 className="w-[30%] text-2xl font-semibold text-zinc-400">
           <i
             onClick={() => navigate(-1)}
             className="hover:text-[#6565CD] ri-arrow-left-line"
