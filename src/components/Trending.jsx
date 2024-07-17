@@ -5,29 +5,48 @@ import Dropdown from "./partials/Dropdown";
 import axios from "../utils/axios";
 import Cards from "./partials/Cards";
 import Loading from "./Loading";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Trending = () => {
   const navigate = useNavigate();
 
   const [category, setcategory] = useState("all");
   const [duration, setduration] = useState("day");
-  const [trending, settrending] = useState(null);
+  const [trending, settrending] = useState([]);
+  const [page, setpage] = useState(1);
+  const [hasMore, sethasMore] = useState(true);
 
   const getTrending = async () => {
     try {
-      const { data } = await axios.get(`/trending/${category}/${duration}`);
-      settrending(data.results);
+      const { data } = await axios.get(`/trending/${category}/${duration}?page=${page}`);
+
+      if (data.results.length > 0) {
+        settrending((prevState) => [...prevState, ...data.results]);
+        setpage(page + 1);
+      } else {
+        sethasMore(false);
+      }
     } catch (error) {
       console.log("Error : ", error);
     }
   };
 
+  const refreshHandler = () => {
+    if (trending.length === 0) {
+      getTrending();
+    } else {
+      setpage(1);
+      settrending([]);
+      getTrending();
+    }
+  };
+
   useEffect(() => {
-    getTrending();
+    refreshHandler();
   }, [category, duration]);
 
-  return trending ? (
-    <div className="w-full h-screen overflow-y-auto overflow-x-hidden">
+  return trending.length > 0 ? (
+    <div className="w-full h-screen">
       <div className="w-full h-[10vh] px-10 flex items-center justify-between">
         <h1 className="w-[20%] text-2xl font-semibold text-zinc-400">
           <i
@@ -50,9 +69,19 @@ const Trending = () => {
           />
         </div>
       </div>
-      <Cards data={trending} title={category} />
+
+      <InfiniteScroll
+        dataLength={trending.length}
+        next={getTrending}
+        hasMore={hasMore}
+        loader={<h1>Loading...</h1>}
+      >
+        <Cards data={trending} title={category} />
+      </InfiniteScroll>
     </div>
-  ) : <Loading />
+  ) : (
+    <Loading />
+  );
 };
 
 export default Trending;
