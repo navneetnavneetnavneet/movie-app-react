@@ -44,11 +44,11 @@ const SideNav = () => {
         <h1 className="text-semibold text-white text-xl mt-10 mb-3">
           Website Information
         </h1>
-        <Link className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
+        <Link to="/about" className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
           <i className="ri-information-2-fill"></i>
           About
         </Link>
-        <Link className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
+        <Link to="/contact" className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
           <i className="ri-phone-fill"></i>
           Contact Us
         </Link>
