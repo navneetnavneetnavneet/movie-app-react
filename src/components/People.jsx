@@ -7,21 +7,21 @@ import Dropdown from "./partials/Dropdown";
 import Loading from "./Loading";
 import Cards from "./partials/Cards";
 
-const Popular = () => {
-  document.title = "SCSDB | Popular";
+const People = () => {
+  document.title = "SCSDB | People";
   const navigate = useNavigate();
 
-  const [category, setcategory] = useState("movie");
-  const [popular, setpopular] = useState([]);
+  const [category, setcategory] = useState("popular");
+  const [person, setperson] = useState([]);
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
 
-  const getPopular = async () => {
+  const getPerson = async () => {
     try {
-      const { data } = await axios.get(`/${category}/popular?page=${page}`);
+      const { data } = await axios.get(`/person/${category}?page=${page}`);
 
       if (data.results.length > 0) {
-        setpopular((prevState) => [...prevState, ...data.results]);
+        setperson((prevState) => [...prevState, ...data.results]);
         setpage(page + 1);
       } else {
         sethasMore(false);
@@ -32,12 +32,12 @@ const Popular = () => {
   };
 
   const refreshHandler = () => {
-    if (popular.length === 0) {
-      getPopular();
+    if (person.length === 0) {
+      getPerson();
     } else {
       setpage(1);
-      setpopular([]);
-      getPopular();
+      setperson([]);
+      getPerson();
     }
   };
 
@@ -45,7 +45,7 @@ const Popular = () => {
     refreshHandler();
   }, [category]);
 
-  return popular.length > 0 ? (
+  return person.length > 0 ? (
     <div className="w-full h-screen">
       <div className="w-full h-[10vh] px-10 flex items-center justify-between">
         <h1 className="w-[30%] text-2xl font-semibold text-zinc-400">
@@ -53,25 +53,18 @@ const Popular = () => {
             onClick={() => navigate(-1)}
             className="hover:text-[#6565CD] ri-arrow-left-line"
           ></i>{" "}
-          Popular <small className="text-sm text-zinc-500">({category})</small>
+          People <small className="text-sm text-zinc-500">({category})</small>
         </h1>
         <TopNav />
-        <div className="w-[30%] flex gap-x-5">
-          <Dropdown
-            title="Category"
-            options={["tv", "movie"]}
-            func={(e) => setcategory(e.target.value)}
-          />
-        </div>
       </div>
 
       <InfiniteScroll
-        dataLength={popular.length}
-        next={getPopular}
+        dataLength={person.length}
+        next={getPerson}
         hasMore={hasMore}
         loader={<h1>Loading...</h1>}
       >
-        <Cards data={popular} title={category} />
+        <Cards data={person} title={category} />
       </InfiniteScroll>
     </div>
   ) : (
@@ -79,4 +72,4 @@ const Popular = () => {
   );
 };
 
-export default Popular;
+export default People;
