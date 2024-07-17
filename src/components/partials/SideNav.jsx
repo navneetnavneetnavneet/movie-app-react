@@ -12,11 +12,17 @@ const SideNav = () => {
         <h1 className="text-semibold text-white text-xl mt-10 mb-3">
           New Feeds
         </h1>
-        <Link to="trending" className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
+        <Link
+          to="trending"
+          className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2"
+        >
           <i className="ri-fire-fill"></i>
           Trending
         </Link>
-        <Link className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
+        <Link
+          to="/popular"
+          className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2"
+        >
           <i className="ri-bard-fill"></i>
           Popular
         </Link>
@@ -39,11 +45,11 @@ const SideNav = () => {
           Website Information
         </h1>
         <Link className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
-        <i className="ri-information-2-fill"></i>
+          <i className="ri-information-2-fill"></i>
           About
         </Link>
         <Link className="hover:bg-[#6565CD] hover:text-white duration-300 p-3 rounded-lg flex items-center gap-x-2">
-        <i className="ri-phone-fill"></i>
+          <i className="ri-phone-fill"></i>
           Contact Us
         </Link>
       </nav>
