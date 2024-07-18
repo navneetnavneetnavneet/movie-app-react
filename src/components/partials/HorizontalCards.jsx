@@ -11,7 +11,7 @@ const HorizontalCards = ({ data }) => {
             <Link
               to={`/${d.media_type}/details/${d.id}`}
               key={index}
-              className="min-w-[18%] bg-zinc-900 text-white mb-3"
+              className="min-w-[18%] bg-zinc-900 text-white"
             >
               <div className="w-full h-1/2 overflow-hidden">
                 <img
@@ -26,7 +26,7 @@ const HorizontalCards = ({ data }) => {
                   alt=""
                 />
               </div>
-              <div className="p-3 h-1/2">
+              <div className="textdiv p-3 h-1/2 overflow-y-auto">
                 <h1 className="w-full leading-tight text-wrap text-2xl font-black text-white">
                   {d.name || d.original_name || d.title || d.original_title}
                 </h1>

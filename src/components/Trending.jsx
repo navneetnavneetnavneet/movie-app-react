@@ -6,6 +6,7 @@ import axios from "../utils/axios";
 import Cards from "./partials/Cards";
 import Loading from "./Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { toast } from "react-toastify";
 
 const Trending = () => {
   document.title = "SCSDB | Trending";
@@ -30,7 +31,7 @@ const Trending = () => {
         sethasMore(false);
       }
     } catch (error) {
-      console.log("Error : ", error);
+      toast.error(error)
     }
   };
 

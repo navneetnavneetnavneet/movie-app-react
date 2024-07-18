@@ -27,7 +27,7 @@ const Tvshows = () => {
         sethasMore(false);
       }
     } catch (error) {
-      console.log("Error : ", error);
+      toast.error(error);
     }
   };
 

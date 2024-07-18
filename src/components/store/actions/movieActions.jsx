@@ -1,6 +1,7 @@
 import { loadMovie } from "../reducers/movieSlice";
 export { removeMovie } from "../reducers/movieSlice";
 import axios from "../../../utils/axios";
+import { toast } from "react-toastify";
 
 export const asyncLoadMovie = (id) => async (dispatch, getState) => {
   try {
@@ -20,8 +21,7 @@ export const asyncLoadMovie = (id) => async (dispatch, getState) => {
       watchproviders: watchproviders.data.results.IN,
     };
     dispatch(loadMovie(theultimatedetails));
-    console.log(theultimatedetails);
   } catch (error) {
-    console.log("Error : ", error);
+    toast.error(error);
   }
 };

@@ -6,6 +6,7 @@ import TopNav from "./partials/TopNav";
 import Dropdown from "./partials/Dropdown";
 import Loading from "./Loading";
 import Cards from "./partials/Cards";
+import { toast } from "react-toastify";
 
 const Popular = () => {
   document.title = "SCSDB | Popular";
@@ -27,7 +28,7 @@ const Popular = () => {
         sethasMore(false);
       }
     } catch (error) {
-      console.log("Error : ", error);
+      toast.error(error);
     }
   };
 

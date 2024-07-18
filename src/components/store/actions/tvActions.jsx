@@ -1,6 +1,7 @@
 import { loadTv } from "../reducers/tvSlice";
 export { removeTv } from "../reducers/tvSlice";
 import axios from "../../../utils/axios";
+import { toast } from "react-toastify";
 
 export const asyncLoadTv = (id) => async (dispatch, getState) => {
   try {
@@ -20,8 +21,7 @@ export const asyncLoadTv = (id) => async (dispatch, getState) => {
       watchproviders: watchproviders.data.results.IN,
     };
     dispatch(loadTv(theultimatedetails));
-    console.log(theultimatedetails);
   } catch (error) {
-    console.log("Error : ", error);
+    toast.error(error);
   }
 };

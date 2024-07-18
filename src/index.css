@@ -63,3 +63,7 @@ select::-ms-expand{
 .select:hover::after{
     color: #6565CD;
 }
+
+.textdiv::-webkit-scrollbar{
+    display: none;
+ }

@@ -6,6 +6,7 @@ import axios from "../utils/axios";
 import HorizontalCards from "./partials/HorizontalCards";
 import Dropdown from "./partials/Dropdown";
 import Loading from "./Loading";
+import { toast } from "react-toastify";
 
 const Home = () => {
   document.title = "Movie App | Homepage";
@@ -21,7 +22,7 @@ const Home = () => {
         data.results[(Math.random() * data.results.length).toFixed()];
       setwallpaper(randomdata);
     } catch (error) {
-      console.log("Error : ", error);
+      toast.error(error);
     }
   };
 
@@ -30,7 +31,7 @@ const Home = () => {
       const { data } = await axios.get(`/trending/${category}/day`);
       settrending(data.results);
     } catch (error) {
-      console.log("Error : ", error);
+      toast.error(error);
     }
   };
 
