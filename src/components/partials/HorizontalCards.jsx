@@ -10,9 +10,9 @@ const HorizontalCards = ({ data }) => {
             <Link
               to={`/${d.media_type}/details/${d.id}`}
               key={index}
-              className="min-w-[20%] bg-zinc-900 text-white mb-3"
+              className="min-w-[18%] bg-zinc-900 text-white mb-3"
             >
-              <div className="w-full h-fit overflow-hidden">
+              <div className="w-full h-1/2 overflow-hidden">
                 <img
                   className="w-full h-full object-cover"
                   src={`https://image.tmdb.org/t/p/original/${
