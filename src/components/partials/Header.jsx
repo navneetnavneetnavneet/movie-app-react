@@ -26,7 +26,7 @@ const Header = ({ data }) => {
         <i className="text-yellow-500 ml-5 mr-2 ri-album-fill"></i>
         {data.media_type.toUpperCase()}
       </p>
-      <Link className="px-4 py-2 mt-3 rounded-md text-white bg-[#6565CD]">
+      <Link to={`/${data.media_type}/details/${data.id}/trailer`} className="px-4 py-2 mt-3 rounded-md text-white bg-[#6565CD]">
         Watch Triler
       </Link>
     </div>

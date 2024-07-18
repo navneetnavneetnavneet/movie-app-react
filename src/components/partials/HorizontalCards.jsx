@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import noimage from "/noimage.webp";
 
 const HorizontalCards = ({ data }) => {
   return (
@@ -15,9 +16,13 @@ const HorizontalCards = ({ data }) => {
               <div className="w-full h-1/2 overflow-hidden">
                 <img
                   className="w-full h-full object-cover"
-                  src={`https://image.tmdb.org/t/p/original/${
+                  src={
                     d.backdrop_path || d.profile_path
-                  }`}
+                      ? `https://image.tmdb.org/t/p/original/${
+                          d.backdrop_path || d.profile_path
+                        }`
+                      : noimage
+                  }
                   alt=""
                 />
               </div>
@@ -25,10 +30,12 @@ const HorizontalCards = ({ data }) => {
                 <h1 className="w-full leading-tight text-wrap text-2xl font-black text-white">
                   {d.name || d.original_name || d.title || d.original_title}
                 </h1>
-                <p className="w-full text-wrap leading-tight text-white my-3 tracking-tight">
-                  {d.overview.slice(0, 100)} . . .
-                  <Link className="text-blue-500">more</Link>
-                </p>
+                {d.overview.length != "" && (
+                  <p className="w-full text-wrap leading-tight text-white my-3 tracking-tight">
+                    {d.overview.slice(0, 100)} . . .
+                    <Link className="text-blue-500">more</Link>
+                  </p>
+                )}
               </div>
             </Link>
           ))

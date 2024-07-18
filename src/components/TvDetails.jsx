@@ -20,8 +20,6 @@ const TvDetails = () => {
 
   const { info } = useSelector((state) => state.tvReducer);
 
-  console.log(info);
-
   useEffect(() => {
     dispatch(asyncLoadTv(id));
 
