@@ -5,7 +5,11 @@ const Cards = ({ data, title }) => {
   return (
     <div className="flex flex-wrap bg-[#1F1E24] gap-16 px-10 my-10">
       {data.map((card, idx) => (
-        <Link key={idx} className="relative w-[25vh]">
+        <Link
+          to={`/${card.media_type || title}/details/${card.id}`}
+          key={idx}
+          className="relative w-[25vh]"
+        >
           <img
             className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0, 0, 0, 0.5)] object-cover"
             src={`https://image.tmdb.org/t/p/original/${
