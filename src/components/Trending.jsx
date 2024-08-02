@@ -9,7 +9,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { toast } from "react-toastify";
 
 const Trending = () => {
-  document.title = "SCSDB | Trending";
+  document.title = "Movie App | Trending";
   const navigate = useNavigate();
 
   const [category, setcategory] = useState("all");
