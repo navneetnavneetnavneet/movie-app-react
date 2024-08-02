@@ -22,7 +22,7 @@ const TopNav = () => {
   }, [query]);
 
   return (
-    <div className="w-full h-[10vh] relative flex items-center justify-start gap-x-3 pl-[25%] text-zinc-400">
+    <div className="w-full h-[10vh] relative hidden md:flex items-center justify-start gap-x-3 pl-[25%] text-zinc-400">
       <i className="text-2xl ri-search-line"></i>
       <input
         onChange={(e) => setquery(e.target.value)}
