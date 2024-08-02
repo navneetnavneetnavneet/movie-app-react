@@ -4,12 +4,12 @@ import noimage from "/noimage.webp";
 
 const Cards = ({ data, title }) => {
   return (
-    <div className="flex flex-wrap bg-[#1F1E24] gap-16 px-10 my-10">
+    <div className="flex flex-wrap bg-[#1F1E24] md:gap-x-16 justify-between px-3 md:px-10 my-5 md:my-10">
       {data.map((card, idx) => (
         <Link
           to={`/${card.media_type || title}/details/${card.id}`}
           key={idx}
-          className="relative w-[25vh]"
+          className="relative md:w-[25vh] w-[48%] mb-10"
         >
           <img
             className="h-[40vh] shadow-[8px_17px_38px_2px_rgba(0, 0, 0, 0.5)] object-cover"
@@ -22,7 +22,7 @@ const Cards = ({ data, title }) => {
             }
             alt=""
           />
-          <h1 className="w-full mt-3 text-xl font-semibold text-zinc-200">
+          <h1 className="w-full mt-3 text-xl leading-none font-semibold text-zinc-200">
             {card.title ||
               card.name ||
               card.original_name ||
@@ -30,7 +30,7 @@ const Cards = ({ data, title }) => {
           </h1>
 
           {card.vote_average && (
-            <div className="absolute bottom-[35%] -right-5 -rotate-12 text-white font-semibold w-10 h-10 bg-yellow-500 rounded-full flex items-center justify-center">
+            <div className="absolute  hidden bottom-[35%] -right-5 -rotate-12 text-white font-semibold w-10 h-10 bg-yellow-500 rounded-full md:flex items-center justify-center">
               {(card.vote_average * 10).toFixed()}
               <sup>%</sup>
             </div>
