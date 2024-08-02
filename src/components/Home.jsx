@@ -46,7 +46,8 @@ const Home = () => {
       <div className="md:w-[80%] w-full md:h-full overflow-y-auto overflow-x-hidden">
         <TopNav />
         <Header data={wallpaper} />
-        <div className="flex justify-between items-center px-5 my-5">
+        <div className="px-5">
+        <div className="flex justify-between items-center my-5">
           <h1 className="md:text-3xl text-xl w-2/3 font-semibold text-zinc-400">
             Trending
           </h1>
@@ -57,6 +58,7 @@ const Home = () => {
           />
         </div>
         <HorizontalCards data={trending} />
+        </div>
       </div>
     </>
   ) : (

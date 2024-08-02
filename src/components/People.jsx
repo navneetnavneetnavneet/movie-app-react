@@ -48,13 +48,13 @@ const People = () => {
 
   return person.length > 0 ? (
     <div className="w-full h-screen">
-      <div className="w-full h-[10vh] px-10 flex items-center justify-between">
-        <h1 className="w-[30%] text-2xl font-semibold text-zinc-400">
+      <div className="w-full h-[10vh] md:px-10 px-3 flex items-center justify-between">
+        <h1 className="md:w-[30%] md:text-2xl text-xl font-semibold text-zinc-400">
           <i
             onClick={() => navigate(-1)}
             className="hover:text-[#6565CD] ri-arrow-left-line"
           ></i>{" "}
-          People <small className="text-sm text-zinc-500">({category})</small>
+          People <small className="md:text-sm text-xs text-zinc-500">({category})</small>
         </h1>
         <TopNav />
       </div>
