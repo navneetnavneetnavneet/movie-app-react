@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
+  document.title = "Movie App | Contactpage";
   return (
     <div className="w-full h-screen">
       <div className="w-full h-1/2 bg-[#1f1E24] text-zinc-200 flex flex-col p-[10%] md:p-[5%]">

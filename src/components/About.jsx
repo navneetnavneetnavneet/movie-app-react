@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  document.title = "Movie App | Aboutpage";
   const dets = [
     { title: "Movies", value: "955,559" },
     { title: "Tv Shows", value: "177,407" },
