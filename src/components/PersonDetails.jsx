@@ -30,7 +30,7 @@ const PersonDetails = () => {
   }, [id]);
 
   return info ? (
-    <div className="w-full h-fit pb-10 bg-[#1F1E24] px-[5%] relative">
+    <div className="w-full h-fit pb-10 bg-[#1F1E24] md:px-[5%] px-3 relative">
       {/* part 1 navigation */}
       <nav className="w-full py-6 flex items-center gap-x-10 text-xl text-zinc-100">
         <Link
@@ -39,11 +39,11 @@ const PersonDetails = () => {
         ></Link>
       </nav>
 
-      <div className="w-full flex gap-10">
+      <div className="w-full md:flex gap-10">
         {/* part 2 */}
-        <div className="w-[20%]">
+        <div className="md:w-[20%] w-full">
           <img
-            className="h-[50vh] w-full shadow-[8px_17px_38px_2px_rgba(0, 0, 0, 0.5)] object-cover"
+            className="md:h-[50vh] h-[70vh] w-full shadow-[8px_17px_38px_2px_rgba(0, 0, 0, 0.5)] object-cover"
             src={`https://image.tmdb.org/t/p/original/${info.detail.profile_path}`}
             alt=""
           />
@@ -55,25 +55,25 @@ const PersonDetails = () => {
               target="_blank"
               href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
             >
-              <i className="ri-earth-fill"></i>
+              <i className="ri-earth-fill hover:text-white"></i>
             </a>
             <a
               target="_blank"
               href={`https://www.facebook.com/${info.externalid.facebook_id}`}
             >
-              <i className="ri-facebook-box-fill"></i>
+              <i className="ri-facebook-box-fill hover:text-white"></i>
             </a>
             <a
               target="_blank"
               href={`https://www.instagram.com/${info.externalid.instagram_id}`}
             >
-              <i className="ri-instagram-fill"></i>
+              <i className="ri-instagram-fill hover:text-white"></i>
             </a>
             <a
               target="_blank"
               href={`https://x.com/${info.externalid.twitter_id}`}
             >
-              <i className="ri-twitter-x-fill"></i>
+              <i className="ri-twitter-x-fill hover:text-white"></i>
             </a>
           </div>
 
@@ -106,7 +106,7 @@ const PersonDetails = () => {
               </h1>
               <h2>{info.detail.place_of_birth}</h2>
             </div>
-            <div className="mt-3">
+            <div className="mt-3 hidden md:flex flex-col">
               <h1 className="text-xl tracking-tight font-semibold">
                 Also Known As
               </h1>
@@ -118,11 +118,13 @@ const PersonDetails = () => {
         </div>
 
         {/* part 3 */}
-        <div className="text-zinc-300 w-[80%]">
-          <h1 className="text-5xl font-black">{info.detail.name}</h1>
+        <div className="text-zinc-300 md:w-[80%] md:mt-0 mt-5">
+          <h1 className="md:text-5xl text-3xl font-black">
+            {info.detail.name}
+          </h1>
           <div className="mt-3 w-full">
             <h1 className="text-xl tracking-tight font-semibold">Biography</h1>
-            <h2>{info.detail.biography}</h2>
+            <p className="md:text-base text-sm">{info.detail.biography}</p>
           </div>
           <div className="mt-3">
             <h1 className="text-xl tracking-tight font-semibold mb-5">
@@ -130,8 +132,8 @@ const PersonDetails = () => {
             </h1>
             <HorizontalCards data={info.combinedCredits.cast} />
           </div>
-          <div className="w-full flex items-center justify-between">
-            <h1 className="text-xl tracking-tight font-semibold mb-5">
+          <div className="w-full flex items-center justify-between mt-5">
+            <h1 className="w-2/3 text-xl tracking-tight font-semibold mb-5">
               Acting
             </h1>
             <Dropdown
@@ -140,7 +142,7 @@ const PersonDetails = () => {
               func={(e) => setcategory(e.target.value)}
             />
           </div>
-          <div className="w-full h-[50vh] mt-10 p-5 shadow-xl shadow-[rgba(255,255,255,0.1)] border-2 border-zinc-600 overflow-x-hidden overflow-y-auto">
+          <div className="w-full h-[50vh] mt-5 p-5 shadow-xl shadow-[rgba(255,255,255,0.1)] border-2 border-zinc-600 overflow-x-hidden overflow-y-auto">
             {info[category + "Credits"].cast.map((c, idx) => (
               <li
                 key={idx}
