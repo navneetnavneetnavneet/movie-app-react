@@ -10,8 +10,9 @@ const Header = ({ data }) => {
         })`,
         backgroundPosition: "top 10%",
         backgroundSize: "cover",
+        objectFit: "cover"
       }}
-      className="w-full md:h-[60vh] h-[70vh] flex flex-col items-start justify-end p-[5%]"
+      className="md:w-full md:h-[60vh] h-[70vh] flex flex-col items-start justify-end p-[5%]"
     >
       <h1 className="md:w-2/3 w-full md:text-5xl text-3xl leading-none font-black text-white">
         {data.name || data.original_name || data.title || data.original_title}
