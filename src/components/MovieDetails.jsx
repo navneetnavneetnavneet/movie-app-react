@@ -105,11 +105,11 @@ const MovieDetails = () => {
             </h1>
             <h1 className="text-xl mt-2">Overview</h1>
             <p className="md:text-base text-sm">{info.detail.overview}</p>
-            <h1 className="text-lg font-semibold mt-2">
+            <h1 className="md:text-lg font-semibold mt-2">
               Producation Companies -{" "}
               {info.detail.production_companies.map((c) => c.name).join(", ")}
             </h1>
-            <h1 className="text-lg font-semibold">
+            <h1 className="md:text-lg font-semibold">
               Producation Countries -{" "}
               {info.detail.production_countries.map((c) => c.name).join(", ")}
             </h1>
