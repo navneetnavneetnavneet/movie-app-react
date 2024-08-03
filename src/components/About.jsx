@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import about from "/about.png"
 
 const About = () => {
   document.title = "Movie App | Aboutpage";
@@ -45,8 +46,8 @@ const About = () => {
         Hi there,
       </h1>
       <img
-        className="md:w-2/3 object-cover -mt-[7%] z-10"
-        src="https://www.themoviedb.org/assets/2/v4/marketing/deadpool-06f2a06d7a418ec887300397b6861383bf1e3b72f604ddd5f75bce170e81dce9.png"
+        className="md:w-2/3 object-cover -mt-[5%] z-10"
+        src={about}
         alt=""
       />
       <h1 className="md:text-5xl text-3xl font-black md:my-10 my-5">
