@@ -1,9 +1,9 @@
-import loader from "/loading.webp"
+import loader from "/loading.gif"
 
 const Loading = () => {
   return (
-    <div className='w-full h-screen bg-black flex items-center justify-center'>
-        <img className='h-1/2 object-cover' src={loader} alt="" />
+    <div className='w-full h-screen bg-[#121111] flex items-center justify-center'>
+        <img className='h-full w-full object-cover' src={loader} alt="" />
     </div>
   )
 }

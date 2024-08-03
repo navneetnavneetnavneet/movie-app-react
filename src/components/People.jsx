@@ -9,7 +9,7 @@ import Cards from "./partials/Cards";
 import { toast } from "react-toastify";
 
 const People = () => {
-  document.title = "SCSDB | People";
+  document.title = "Movie App | People";
   const navigate = useNavigate();
 
   const [category, setcategory] = useState("popular");

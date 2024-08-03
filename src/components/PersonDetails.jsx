@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncLoadPerson, removePerson } from "./store/actions/personActions";
 import {
   Link,
-  Outlet,
   useLocation,
   useNavigate,
   useParams,
