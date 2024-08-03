@@ -41,7 +41,7 @@ const About = () => {
     },
   ];
   return (
-    <div className="w-full min-h-[255vh] bg-[#1F1E24] text-white flex flex-col justify-start items-center px-3">
+    <div className="w-full min-h-[260vh] bg-[#1F1E24] text-white flex flex-col justify-start items-center px-3">
       <h1 className="md:text-[12vw] text-7xl mt-5 font-black italic">
         Hi there,
       </h1>
