@@ -11,6 +11,7 @@ import {
 import Loading from "./Loading";
 import HorizontalCards from "./partials/HorizontalCards";
 import noimage from "/noimage.webp";
+import imdb from "/imdblogo.png"
 
 const TvDetails = () => {
   const { pathname } = useLocation();
@@ -56,7 +57,7 @@ const TvDetails = () => {
           target="_blank"
           href={`https://www.imdb.com/title/${info.externalid.imdb_id}`}
         >
-          imdb
+          <img className="w-16 object-cover" src={imdb} alt="" />
         </a>
       </nav>
 

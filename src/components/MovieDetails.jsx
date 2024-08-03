@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Loading from "./Loading";
 import HorizontalCards from "./partials/HorizontalCards";
+import imdb from "/imdblogo.png"
 
 const MovieDetails = () => {
   const { pathname } = useLocation();
@@ -55,7 +56,7 @@ const MovieDetails = () => {
           target="_blank"
           href={`https://www.imdb.com/title/${info.externalid.imdb_id}`}
         >
-          imdb
+          <img className="w-16 object-cover" src={imdb} alt="" />
         </a>
       </nav>
 

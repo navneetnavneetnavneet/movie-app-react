@@ -56,7 +56,7 @@ const Home = () => {
         className="md:hidden text-2xl ri-menu-fill absolute top-3 left-3 text-white"
       ></i>
       <div
-        className={`md:hidden absolute top-0 -left-[${left}%] transition-all duration-1000 z-[100] bg-red-300 w-[50%] h-screen`}
+        className={`sidebar md:hidden absolute top-0 -left-[${left}%] duration-1000 transition-all z-[100] bg-red-300 w-[50%] h-screen`}
       >
         <SideNav hidden={"flex"} closeIconHandler={closeIconHandler} />
       </div>
